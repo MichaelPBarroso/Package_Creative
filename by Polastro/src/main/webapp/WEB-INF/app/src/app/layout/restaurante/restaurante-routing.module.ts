@@ -4,7 +4,8 @@ import { RestauranteComponent } from './restaurante.component'
 import { FormComponent } from './form/form.component'
 
 const routes: Routes = [
-    {path: '', component: RestauranteComponent},
+    { path: '', component: RestauranteComponent },
+
 ];
 
 @NgModule({

@@ -5,14 +5,12 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
-import { NotFoundComponent } from './shared/components/not-found/not-found.component';
-import { HeaderComponent } from './shared/components/header/header.component';
+
+import { AuthGuard } from './shared/guard/auth.guard';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    NotFoundComponent,
-    HeaderComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -20,7 +18,7 @@ import { HeaderComponent } from './shared/components/header/header.component';
     AppRoutingModule,
     HttpModule
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

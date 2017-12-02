@@ -12,4 +12,7 @@ export class HeaderComponent implements OnInit {
   ngOnInit() {
   }
 
+  onLoggedout() {
+    localStorage.removeItem('isLoggedin');
+  }
 }
