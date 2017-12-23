@@ -4,6 +4,7 @@ import { LayoutComponent } from './layout.component';
 import { LayoutRoutingModule } from './layout-routing.module';
 import { HeaderComponent } from '../shared/components/header/header.component';
 import { NotFoundComponent } from '../not-found/not-found.component';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   imports: [
@@ -13,7 +14,8 @@ import { NotFoundComponent } from '../not-found/not-found.component';
   declarations: [
     LayoutComponent,
     HeaderComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    MenuComponent
   ]
 })
 export class LayoutModule { }
