@@ -8,6 +8,7 @@ declare var $:any;
 })
 export class FormRendaComponent implements OnInit {
 
+	//Este item deve vir de uma api sobre os tipos de renda
 	tipoRenda: any[] = [{id:1, name: "Cartão crédito"}, {id:2, name:"Conta bancaria"}, {id:3, name:"Vale refeição"}, {id:4, name:"Vale Alimentação"}]
 
   	tipoRendaAtual: number;
