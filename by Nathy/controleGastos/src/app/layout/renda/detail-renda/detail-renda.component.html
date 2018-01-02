@@ -1,0 +1,65 @@
+<div class="row">
+	<div class="col s12">
+		<div class="card">
+			<div class="card-content">
+				<h5>Detalhes renda</h5>
+				<div class="row">
+					<div class="col s12">
+						<span class="right">Valor Limite Atual: R$ 5000,00</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12">
+						<span>Selecione Range para apresentar informações:</span>
+					</div>
+				</div>
+				<div class="row">
+					<div class="input-field col s12 l6">
+						<label for="dataInicio">Data inicio</label>
+						<input id="dataInicio" class="datepicker" type="text">
+					</div>
+					<div class="input-field col s12 l6">
+						<label for="dataFim">Data fim</label>
+						<input id="dataFim" class="datepicker" type="text">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s12">
+		<card-reveal titleCard="Gasto da renda" [itensDetalhe]="itensMensal" [headerTable]="headerTable" [bodyTable]="bodyMensal">
+			<div class="row">
+				<div class="col l4 offset-l8 s12">
+					<p>
+						<label>
+							<input type="radio" name="chart" checked (change)="onChartSelectionChange('bar')">
+							<span>Gráfico de Barras</span>
+						</label>
+					
+						<label>
+							<input type="radio" name="chart" (change)="onChartSelectionChange('line')">
+							<span>Gráfico de Linhas</span>
+						</label>
+					</p>
+				</div>
+			</div>
+
+			<div class="row">
+				<div class="col s12" >
+					<canvas baseChart height="150"
+						[datasets]="chartData" 
+						[labels]="chartLabels" 
+						[options]="chartOptions" 
+						[legend]="chartLegend" 
+						[chartType]="chartType" 
+						(chartHover)="chartHovered($event)" 
+						(chartClick)="chartClicked($event)">
+					</canvas>
+				</div>
+			</div>
+		</card-reveal>
+	</div>
+</div>
+

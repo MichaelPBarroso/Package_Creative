@@ -11,7 +11,7 @@
 				<div class="row">
 					<div class="input-field col s12">
 						<select [(ngModel)]="tipoRendaAtual" name="tipoRendaAtual" class="validate">
-							<option value="" disabled selected>Choose your option</option>
+							<option value="" disabled selected>Selecione uma opção</option>
 							<option *ngFor="let tipo of tipoRenda" value="{{tipo.id}}">{{tipo.name}}</option>
 						</select>
 						<label>Tipo de renda</label>
@@ -19,16 +19,16 @@
 				</div>
 				<div class="row" *ngIf="tipoRendaAtual == 1">
 					<div class="input-field col s12">
-						<input id="valorInicialRenda" class="validate" type="number">
-						<label for="valorInicialRenda">Valor inicial da renda</label>
-					</div>
-				</div>
-				<div class="row" *ngIf="tipoRendaAtual == 2">
-					<div class="input-field col s12">
 						<input id="limiteCartao" class="validate" type="number">
 						<label for="limiteCartao">Limite cartão</label>
 					</div>
 				</div>
+				<div class="row" *ngIf="tipoRendaAtual == 2">
+						<div class="input-field col s12">
+							<input id="valorInicialRenda" class="validate" type="number">
+							<label for="valorInicialRenda">Valor inicial da renda</label>
+						</div>
+					</div>
 				<div class="row" *ngIf="tipoRendaAtual == 3 || tipoRendaAtual == 4">
 					<div class="input-field col s12">
 						<input id="valorMensal" class="validate" type="number">

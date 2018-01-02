@@ -1,0 +1,30 @@
+<div class="container">
+    <div class=" col s12">
+      	<div class="card-panel">
+	        <form class="col s12">
+          		<div class="row">
+		            <div class="input-field col s12">
+              			<input id="nameGasto" class="validate" type="text">
+              			<label for="nameGasto">Nome</label>
+            		</div>
+            		<div class="input-field col s12">
+              			<input id="valorGasto" class="validate" type="number">
+              			<label for="valorGasto">Valor</label>
+					</div>
+					<div class="input-field col s12">
+						<input id="dataGasto" class="validate" type="text">
+						<label>Data do gasto</label>
+					</div>
+            		<div class="input-field col s12">
+              			<select name="tipoRendaAtual" class="validate">
+			                <option value="" disabled selected>Selecione uma opção</option>
+                			<option *ngFor="let renda of rendaCadastrada" value="{{renda.id}}">{{renda.name}}</option>
+              			</select>
+              			<label>Renda</label>
+            		</div> 
+          		</div>
+          		<button type="submit" class="btn right">Salvar gasto</button>
+        	</form>
+      	</div>
+    </div>
+</div>

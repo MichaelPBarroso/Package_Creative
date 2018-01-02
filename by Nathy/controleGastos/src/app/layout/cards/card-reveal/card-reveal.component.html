@@ -3,16 +3,27 @@
 		<span class="card-title activator">{{titleCard}}
 			<i class="material-icons right">more_vert</i>
 		</span>
-		<p style="margin-top:7em;margin-bottom:7em;">
-			{{textCard}}
-		</p>
+		<ng-content></ng-content>
 	</div>
 	<div class="card-reveal">
 		<span class="card-title">{{titleSubCard}}
 			<i class="material-icons right">close</i>
 		</span>
-		<p *ngFor="let itemCard of itensDetalhe">
-			{{itemCard}}
-		</p>
+		<table>
+			<thead>
+				<tr>
+					<th *ngFor="let header of headerTable">
+						{{header}}
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let body of bodyTable">
+					<td *ngFor="let item of body">
+						{{item}}
+					</td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
 </div>

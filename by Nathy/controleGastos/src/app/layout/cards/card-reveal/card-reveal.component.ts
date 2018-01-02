@@ -9,9 +9,12 @@ import { Component, OnInit, Input } from '@angular/core';
 export class CardRevealComponent implements OnInit {
 
   @Input() titleCard : string = "";
-  @Input() textCard : any;
   @Input() titleSubCard : string = "Detalhes";
   @Input() itensDetalhe : string[] = [];
+
+  //Table
+  @Input() headerTable : string[];
+  @Input() bodyTable : any[][];
 
   constructor() { }
 

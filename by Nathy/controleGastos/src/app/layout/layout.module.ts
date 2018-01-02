@@ -2,24 +2,39 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './layout.component';
 import { LayoutRoutingModule } from './layout-routing.module';
-import { NavbarComponent } from './structure/navbar/navbar.component';
-import { FooterComponent } from './structure/footer/footer.component';
-import { NotFoundComponent } from './structure/not-found/not-found.component';
-import { FormRendaComponent } from './renda/form-renda/form-renda.component';
+
 import { FormsModule } from '@angular/forms';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { ChartsModule as Ng2Charts } from 'ng2-charts';
+
+import { NavbarComponent, FooterComponent, NotFoundComponent } from './structure';
+import { CardRevealComponent } from './cards';
+
+import { DashboardComponent } from './dashboard';
+import { GastoComponent, FormGastoComponent } from './gasto';
+import { RendaComponent, FormRendaComponent, DetailRendaComponent } from './renda';
 
 @NgModule({
   imports: [
     LayoutRoutingModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    Ng2Charts,
+    Ng2GoogleChartsModule
   ],
   declarations: [
     LayoutComponent,
     NavbarComponent,
     FooterComponent,
     NotFoundComponent,
-    FormRendaComponent
+    CardRevealComponent,
+
+    DashboardComponent,
+    RendaComponent,
+    FormRendaComponent,
+    DetailRendaComponent,
+    GastoComponent,
+    FormGastoComponent
   ]
 })
 export class LayoutModule { }

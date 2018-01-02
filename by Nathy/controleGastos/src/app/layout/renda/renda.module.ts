@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RendaComponent } from './renda.component';
 import { RendaRoutingModule } from './renda-routing.module';
+//import { RendaComponent } from './renda.component';
+//import { DetailRendaComponent } from './detail-renda/detail-renda.component';
 
 @NgModule({
   imports: [
@@ -9,7 +10,8 @@ import { RendaRoutingModule } from './renda-routing.module';
     RendaRoutingModule
   ],
   declarations: [
-    RendaComponent
+    //RendaComponent
+    //DetailRendaComponent
   ]
 })
 export class RendaModule { }

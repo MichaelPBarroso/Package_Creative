@@ -1,0 +1,1 @@
+export * from './card-reveal/card-reveal.component';
