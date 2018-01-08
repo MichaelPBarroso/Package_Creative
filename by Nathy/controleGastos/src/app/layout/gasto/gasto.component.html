@@ -3,9 +3,24 @@
 		<div class="card">
 			<div class="card-content">
 				<div class="row">
-					<h4>Gastos</h4>
+					<h4>Ultimos Gastos</h4>
 				</div>
-				<div class="row"></div>
+				<div class="row">
+					<div class="col s12">
+						<ul class="collection with-header">
+							<li class="collection-item" *ngFor="let gasto of gastoCadastrada">
+								<div>
+									<span>{{gasto.date}} - {{gasto.name}}</span>
+									<span  class="right">{{gasto.value | currency:'BRL':true:'2.2-4'}}</span>
+									<!--<a class="secondary-content" [routerLink]="['/renda/detalhe']">-->
+									<!--<a class="secondary-content">
+										<i class="material-icons">send</i>
+									</a>-->
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>

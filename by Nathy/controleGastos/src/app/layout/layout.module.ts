@@ -13,6 +13,10 @@ import { CardRevealComponent } from './cards';
 import { DashboardComponent } from './dashboard';
 import { GastoComponent, FormGastoComponent } from './gasto';
 import { RendaComponent, FormRendaComponent, DetailRendaComponent } from './renda';
+import { PlanejamentoComponent } from './planejamento/planejamento.component';
+import { CardBasicComponent } from './cards/card-basic/card-basic.component';
+import { CategoriaComponent } from './categoria/categoria.component';
+import { FormCategoriaComponent } from './categoria/form-categoria/form-categoria.component';
 
 @NgModule({
   imports: [
@@ -34,7 +38,11 @@ import { RendaComponent, FormRendaComponent, DetailRendaComponent } from './rend
     FormRendaComponent,
     DetailRendaComponent,
     GastoComponent,
-    FormGastoComponent
+    FormGastoComponent,
+    PlanejamentoComponent,
+    CardBasicComponent,
+    CategoriaComponent,
+    FormCategoriaComponent
   ]
 })
 export class LayoutModule { }

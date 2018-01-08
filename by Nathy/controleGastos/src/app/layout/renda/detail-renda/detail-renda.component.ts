@@ -22,9 +22,9 @@ export class DetailRendaComponent implements OnInit {
 	headerTable: string[] = ["Data", "Item", "Valor"];
 	
 	bodyMensal: string[][] = [
-		['1/1/2017', 'Almoço', 'R$ 30,00'],
-		['1/1/2017', 'Lanche', 'R$ 10,00'],
-		['1/1/2017', 'Jantar', 'R$ 40,00'],
+		['01/01/2017', 'Almoço', 'R$ 30,00'],
+		['01/01/2017', 'Lanche', 'R$ 10,00'],
+		['01/01/2017', 'Jantar', 'R$ 40,00'],
 		['26/12/2016', 'Roupas', 'R$ 200,00'],
 		['23/12/2016', 'Mercado', 'R$ 300,00'],
 		['22/12/2016', 'Presente', 'R$ 100,00'],

@@ -5,6 +5,7 @@ import { NotFoundComponent } from './structure';
 import { DashboardComponent } from './dashboard';
 import { GastoComponent, FormGastoComponent } from './gasto';
 import { RendaComponent, FormRendaComponent, DetailRendaComponent } from './renda';
+import { CategoriaComponent, FormCategoriaComponent } from './categoria';
 
 
 const routes: Routes = [
@@ -15,12 +16,14 @@ const routes: Routes = [
           //{ path: 'renda', loadChildren: './renda/renda.module#RendaModule' },
           //{ path: 'gasto', loadChildren: './gasto/gasto.module#GastoModule' },
           { path: '', component: DashboardComponent },
+          { path: 'not-found', component: NotFoundComponent },
           { path: 'renda', component: RendaComponent },
           { path: 'renda/cadastro', component: FormRendaComponent },
           { path: 'renda/detalhe', component: DetailRendaComponent},
           { path: 'gasto', component: GastoComponent },
           { path: 'gasto/cadastro', component: FormGastoComponent },
-          { path: 'not-found', component: NotFoundComponent }
+          { path: 'categoria', component: CategoriaComponent },
+          { path: 'categoria/cadastro', component: FormCategoriaComponent }
       ]
   }
 ]
