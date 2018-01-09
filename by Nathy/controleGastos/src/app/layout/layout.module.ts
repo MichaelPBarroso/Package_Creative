@@ -17,6 +17,8 @@ import { PlanejamentoComponent } from './planejamento/planejamento.component';
 import { CardBasicComponent } from './cards/card-basic/card-basic.component';
 import { CategoriaComponent } from './categoria/categoria.component';
 import { FormCategoriaComponent } from './categoria/form-categoria/form-categoria.component';
+import { FormPlanejamentoComponent } from './planejamento/form-planejamento/form-planejamento.component';
+import { DetailPlanejamentoComponent } from './planejamento/detail-planejamento/detail-planejamento.component';
 
 @NgModule({
   imports: [
@@ -42,7 +44,9 @@ import { FormCategoriaComponent } from './categoria/form-categoria/form-categori
     PlanejamentoComponent,
     CardBasicComponent,
     CategoriaComponent,
-    FormCategoriaComponent
+    FormCategoriaComponent,
+    FormPlanejamentoComponent,
+    DetailPlanejamentoComponent
   ]
 })
 export class LayoutModule { }

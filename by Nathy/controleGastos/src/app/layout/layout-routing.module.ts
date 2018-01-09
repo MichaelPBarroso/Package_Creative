@@ -6,6 +6,7 @@ import { DashboardComponent } from './dashboard';
 import { GastoComponent, FormGastoComponent } from './gasto';
 import { RendaComponent, FormRendaComponent, DetailRendaComponent } from './renda';
 import { CategoriaComponent, FormCategoriaComponent } from './categoria';
+import { PlanejamentoComponent, FormPlanejamentoComponent, DetailPlanejamentoComponent } from './planejamento';
 
 
 const routes: Routes = [
@@ -23,7 +24,10 @@ const routes: Routes = [
           { path: 'gasto', component: GastoComponent },
           { path: 'gasto/cadastro', component: FormGastoComponent },
           { path: 'categoria', component: CategoriaComponent },
-          { path: 'categoria/cadastro', component: FormCategoriaComponent }
+          { path: 'categoria/cadastro', component: FormCategoriaComponent },
+          { path: 'planejamento', component: PlanejamentoComponent },
+          { path: 'planejamento/cadastro', component: FormPlanejamentoComponent },
+          { path: 'planejamento/detalhe', component: DetailPlanejamentoComponent }
       ]
   }
 ]

@@ -7,6 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PlanejamentoComponent implements OnInit {
 
+	planejamentoCadastrado : any[] = 
+	[
+		{id: 1, name: "Planejamento de Janeiro", tipo:"Mensal", dataCriacao:"01/01/2018"},
+		{id: 2, name: "Compras final de ano", tipo:"Gastos", dataCriacao:"04/12/2017"},
+		{id: 3, name: "Planejamento trimestal", tipo:"Trimestral", dataCriacao:"28/08/2017"}
+	]
+
   constructor() { }
 
   ngOnInit() {
