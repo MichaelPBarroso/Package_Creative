@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { RendaComponent } from './renda.component';
+import { ContaComponent } from './conta.component';
 
 const routes: Routes = [
-	{ path: '', component: RendaComponent }
+	{ path: '', component: ContaComponent }
 ]
 
 @NgModule({
@@ -11,4 +11,4 @@ const routes: Routes = [
 	exports: [RouterModule],
   	declarations: []
 })
-export class RendaRoutingModule { }
+export class ContaRoutingModule { }

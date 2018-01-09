@@ -12,7 +12,7 @@ import { CardRevealComponent } from './cards';
 
 import { DashboardComponent } from './dashboard';
 import { GastoComponent, FormGastoComponent } from './gasto';
-import { RendaComponent, FormRendaComponent, DetailRendaComponent } from './renda';
+import { ContaComponent, FormContaComponent, DetailContaComponent } from './conta';
 import { PlanejamentoComponent } from './planejamento/planejamento.component';
 import { CardBasicComponent } from './cards/card-basic/card-basic.component';
 import { CategoriaComponent } from './categoria/categoria.component';
@@ -36,9 +36,9 @@ import { DetailPlanejamentoComponent } from './planejamento/detail-planejamento/
     CardRevealComponent,
 
     DashboardComponent,
-    RendaComponent,
-    FormRendaComponent,
-    DetailRendaComponent,
+    ContaComponent,
+    FormContaComponent,
+    DetailContaComponent,
     GastoComponent,
     FormGastoComponent,
     PlanejamentoComponent,

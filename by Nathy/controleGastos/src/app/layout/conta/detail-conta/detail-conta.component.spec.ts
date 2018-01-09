@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RendaComponent } from './renda.component';
+import { DetailContaComponent } from './detail-conta.component';
 
-describe('RendaComponent', () => {
-  let component: RendaComponent;
-  let fixture: ComponentFixture<RendaComponent>;
+describe('DetailContaComponent', () => {
+  let component: DetailContaComponent;
+  let fixture: ComponentFixture<DetailContaComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RendaComponent ]
+      declarations: [ DetailContaComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RendaComponent);
+    fixture = TestBed.createComponent(DetailContaComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

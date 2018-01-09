@@ -2,11 +2,11 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 declare var $:any;
 
 @Component({
-	selector: 'app-detail-renda',
-  	templateUrl: './detail-renda.component.html',
-  	styleUrls: ['./detail-renda.component.scss']
+	selector: 'app-detail-conta',
+  	templateUrl: './detail-conta.component.html',
+  	styleUrls: ['./detail-conta.component.scss']
 })
-export class DetailRendaComponent implements OnInit {
+export class DetailContaComponent implements OnInit {
 
   	constructor() { }
 

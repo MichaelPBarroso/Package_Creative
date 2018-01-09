@@ -15,11 +15,11 @@
 					<label>Data do gasto</label>
 				</div>
 				<div class="input-field col s12">
-					<select name="tipoRendaAtual" class="validate">
+					<select name="tipoContaAtual" class="validate">
 						<option value="" disabled selected>Selecione uma opção</option>
-						<option *ngFor="let renda of rendaCadastrada" value="{{renda.id}}">{{renda.name}}</option>
+						<option *ngFor="let conta of contaCadastrada" value="{{conta.id}}">{{conta.name}}</option>
 					</select>
-					<label>Renda</label>
+					<label>Conta</label>
 				</div>
 				<div class="input-field col s12">
 					<select name="tipoCategoria" class="validate">

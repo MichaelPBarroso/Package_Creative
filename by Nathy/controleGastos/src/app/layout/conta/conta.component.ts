@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-renda',
-  templateUrl: './renda.component.html',
-  styleUrls: ['./renda.component.scss']
+  selector: 'app-conta',
+  templateUrl: './conta.component.html',
+  styleUrls: ['./conta.component.scss']
 })
-export class RendaComponent implements OnInit {
+export class ContaComponent implements OnInit {
 
-  	rendaCadastrada : any[] = 
+  	contaCadastrada : any[] = 
   	[
 		{id: 1, name: "Cartão 1"},
 		{id: 2, name: "Cartão 2"},

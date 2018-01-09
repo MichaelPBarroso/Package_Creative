@@ -3,38 +3,38 @@
 		<form class="col s12">
 			<div class="row">
 				<div class="input-field col s12">
-					<input id="nameRenda" class="validate" type="text">
-					<label for="nameRenda">Nome</label>
+					<input id="nameConta" class="validate" type="text">
+					<label for="nameConta">Nome</label>
 				</div>
 			</div>
 			<div class="row">
 				<div class="input-field col s12">
-					<select [(ngModel)]="tipoRendaAtual" name="tipoRendaAtual" class="validate">
+					<select [(ngModel)]="tipoContaAtual" name="tipoContaAtual" class="validate">
 						<option value="" disabled selected>Selecione uma opção</option>
-						<option *ngFor="let tipo of tipoRenda" value="{{tipo.id}}">{{tipo.name}}</option>
+						<option *ngFor="let tipo of tipoConta" value="{{tipo.id}}">{{tipo.name}}</option>
 					</select>
-					<label>Tipo de renda</label>
+					<label>Tipo de conta</label>
 				</div> 
 			</div>
-			<div class="row" *ngIf="tipoRendaAtual == 1">
+			<div class="row" *ngIf="tipoContaAtual == 1">
 				<div class="input-field col s12">
 					<input id="limiteCartao" class="validate" type="number">
 					<label for="limiteCartao">Limite cartão</label>
 				</div>
 			</div>
-			<div class="row" *ngIf="tipoRendaAtual == 2">
+			<div class="row" *ngIf="tipoContaAtual == 2">
 					<div class="input-field col s12">
-						<input id="valorInicialRenda" class="validate" type="number">
-						<label for="valorInicialRenda">Valor inicial da renda</label>
+						<input id="valorInicialConta" class="validate" type="number">
+						<label for="valorInicialConta">Valor inicial da conta</label>
 					</div>
 				</div>
-			<div class="row" *ngIf="tipoRendaAtual == 3 || tipoRendaAtual == 4">
+			<div class="row" *ngIf="tipoContaAtual == 3 || tipoContaAtual == 4">
 				<div class="input-field col s12">
 					<input id="valorMensal" class="validate" type="number">
 					<label for="valorMensal">Valor Mensal</label>
 				</div>
 			</div>
-			<button type="submit" class="btn right">Salvar renda</button>
+			<button type="submit" class="btn right">Salvar conta</button>
 		</form>
 	</div>
 </div>

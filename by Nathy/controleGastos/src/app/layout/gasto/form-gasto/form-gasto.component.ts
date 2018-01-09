@@ -19,7 +19,7 @@ export class FormGastoComponent implements OnInit {
     	});
   	}
 
-  	rendaCadastrada : any[] = 
+  	contaCadastrada : any[] = 
   	[
 		{id: 1, name: "Cartão 1"},
 		{id: 2, name: "Cartão 2"},
