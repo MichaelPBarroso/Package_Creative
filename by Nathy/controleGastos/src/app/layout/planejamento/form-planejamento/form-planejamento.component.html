@@ -1,3 +1,113 @@
-<p>
-  form-planejamento works!
-</p>
+<div class="row">
+	<div class="col s12">
+		<div class="card-panel">
+			<form>
+				<div class="card-content">
+					<div class="row">
+						<h4>Adicionar planejamento</h4>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<select class="validate" name="tipoPlanejamento">
+								<option value="" disabled selected>Selecione uma opção</option>
+								<option *ngFor="let tipo of tipoPlanejamento" value="{{tipo.id}}">{{tipo.name}}</option>
+							</select>
+							<label>Tipo de planejamento</label>
+						</div>
+						<div class="input-field col s6">
+							<label for="dataInicio">Data inicio planejamento</label>
+							<input class="datepicker" id="dataInicioPlanejamento" type="text">
+						</div>
+						<div class="input-field col s6">
+							<label for="dataFimPlanejamento">Data final planejamento</label>
+							<input class="datepicker" id="dataFimPlanejamento" type="text">
+						</div>
+						<div class="input-field col s12">
+							<input id="valorMetaPlanejamento" class="validate" type="number">
+							<label for="valorMetaPlanejamento">Valor meta planejamento</label>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col s12 l6">
+			<div class="card-panel">
+				<div class="row">
+					<button class="btn right" (click)="adicionarOcultarConta()">Adicionar contas</button>
+				</div>
+				<div class="card-content">
+					<form-conta *ngIf="adicionarConta"></form-conta>
+					<table *ngIf="!adicionarConta">
+						<thead>
+							<tr>
+								<th>Contas</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Conta 1</td>
+							</tr>
+							<tr>
+								<td>Conta 2</td>
+							</tr>
+							<tr>
+								<td>Conta 3</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+	
+		<div class="col s12 l6">
+			<div class="card-panel">
+				<div class="row">
+					<button class="btn right" (click)="adicionarOcultarGasto()">Adicionar gasto</button>
+				</div>
+				<form-gasto *ngIf="adicionarGasto" (lista)="adicionar($event)"></form-gasto>
+				<table *ngIf="!adicionarGasto">
+					<thead>
+						<tr>
+							<th>Gastos</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Gasto 1</td>
+						</tr>
+						<tr>
+							<td>Gasto 2</td>
+						</tr>
+						<tr>
+							<td>Gasto 3</td>
+						</tr>
+						<tr>
+							<td>Gasto 4</td>
+						</tr>
+						<tr>
+							<td>Gasto 5</td>
+						</tr>
+						<tr>
+							<td>Gasto 6</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="row">
+	<div class="col s12">
+		<canvas baseChart height="150"
+			[datasets]="chartData" 
+			[labels]="chartLabels" 
+			[options]="chartOptions" 
+			[legend]="chartLegend" 
+			[chartType]="chartType" 
+			(chartHover)="chartHovered($event)" 
+			(chartClick)="chartClicked($event)">
+		</canvas>
+	</div>
+</div>

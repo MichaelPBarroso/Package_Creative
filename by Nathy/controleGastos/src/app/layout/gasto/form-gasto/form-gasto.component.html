@@ -1,42 +1,55 @@
-<div class=" col s12">
-	<div class="card-panel">
-		<form class="col s12">
-			<div class="row">
-				<div class="input-field col s12">
-					<input id="nameGasto" class="validate" type="text">
-					<label for="nameGasto">Nome</label>
+<div class="row">
+	<div class="col s12">
+		<div class="card-panel">
+			<form>
+				<div class="card-content">
+					<div class="row">
+						<h4>Adicionar gasto</h4>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="nameGasto" class="validate" type="text">
+							<label for="nameGasto">Nome</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="valorGasto" class="validate" type="number">
+							<label for="valorGasto">Valor</label>
+						</div>
+						<div class="input-field col s12">
+							<input id="dataGasto" class="datepicker" type="text">
+							<label for="dataGasto">Data do gasto</label>
+						</div>
+						<div class="input-field col s12">
+							<select name="tipoContaAtual" class="validate">
+								<option value="" disabled selected>Selecione uma opção</option>
+								<option *ngFor="let conta of contaCadastrada" value="{{conta.id}}">{{conta.name}}</option>
+							</select>
+							<label>Conta</label>
+						</div>
+						<div class="input-field col s12">
+							<select name="tipoCategoria" class="validate">
+								<option value="" disabled selected>Selecione uma opção</option>
+								<option value="">Roupas</option>
+								<option value="">Comida</option>
+								<option value="">Transporte</option>
+								<option value="">Entretenimento</option>
+							</select>
+							<label>Categoria</label>
+						</div>
+						<div class="input-field col s12">
+							<textarea class="materialize-textarea" name="descricao" id="descricao"></textarea>
+							<label for="descricao">Descrição</label>
+						</div>
+						<p class="col s12">
+							<label>
+								<input type="checkbox" class="validate" id="gastoPago" checked>
+								<span>Pagamento realizado</span>
+							</label>
+						</p>
+					</div>
+					<button type="submit" (click)="salvar()" class="btn right">Salvar gasto</button>
 				</div>
-				<div class="input-field col s12">
-					<input id="valorGasto" class="validate" type="number">
-					<label for="valorGasto">Valor</label>
-				</div>
-				<div class="input-field col s12">
-					<input id="dataGasto" class="validate" type="text">
-					<label>Data do gasto</label>
-				</div>
-				<div class="input-field col s12">
-					<select name="tipoContaAtual" class="validate">
-						<option value="" disabled selected>Selecione uma opção</option>
-						<option *ngFor="let conta of contaCadastrada" value="{{conta.id}}">{{conta.name}}</option>
-					</select>
-					<label>Conta</label>
-				</div>
-				<div class="input-field col s12">
-					<select name="tipoCategoria" class="validate">
-						<option value="" disabled selected>Selecione uma opção</option>
-						<option value="">Roupas</option>
-						<option value="">Comida</option>
-						<option value="">Transporte</option>
-						<option value="">Entretenimento</option>
-					</select>
-					<label>Categoria</label>
-				</div>
-				<div class="input-field col s12">
-					<input class="validate" name="descricao" id="descricao"/>
-					<label for="descricao">Descrição</label>
-				</div>
-			</div>
-			<button type="submit" class="btn right">Salvar gasto</button>
-		</form>
+			</form>
+		</div>
 	</div>
 </div>

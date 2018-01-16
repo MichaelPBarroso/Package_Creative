@@ -2,7 +2,7 @@ import { Component, OnInit, AfterViewInit } from '@angular/core';
 declare var $:any;
 
 @Component({
-  	selector: 'app-form-conta',
+  	selector: 'form-conta',
   	templateUrl: './form-conta.component.html',
   	styleUrls: ['./form-conta.component.scss']
 })
