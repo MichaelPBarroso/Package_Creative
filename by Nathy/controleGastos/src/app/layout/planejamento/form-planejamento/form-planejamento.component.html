@@ -35,7 +35,7 @@
 		<div class="col s12 l6">
 			<div class="card-panel">
 				<div class="row">
-					<button class="btn right" (click)="adicionarOcultarConta()">Adicionar contas</button>
+					<button class="btn right green darken-2 waves-effect waves-light" (click)="adicionarOcultarConta()">Adicionar contas</button>
 				</div>
 				<div class="card-content">
 					<form-conta *ngIf="adicionarConta"></form-conta>
@@ -64,7 +64,7 @@
 		<div class="col s12 l6">
 			<div class="card-panel">
 				<div class="row">
-					<button class="btn right" (click)="adicionarOcultarGasto()">Adicionar gasto</button>
+					<button class="btn right green darken-2 waves-effect waves-light" (click)="adicionarOcultarGasto()">Adicionar gasto</button>
 				</div>
 				<form-gasto *ngIf="adicionarGasto" (lista)="adicionar($event)"></form-gasto>
 				<table *ngIf="!adicionarGasto">
@@ -100,14 +100,16 @@
 </div>
 <div class="row">
 	<div class="col s12">
-		<canvas baseChart height="150"
-			[datasets]="chartData" 
-			[labels]="chartLabels" 
-			[options]="chartOptions" 
-			[legend]="chartLegend" 
-			[chartType]="chartType" 
-			(chartHover)="chartHovered($event)" 
-			(chartClick)="chartClicked($event)">
-		</canvas>
+		<div class="card-panel">
+			<canvas baseChart height="150"
+				[datasets]="chartData" 
+				[labels]="chartLabels" 
+				[options]="chartOptions" 
+				[legend]="chartLegend" 
+				[chartType]="chartType" 
+				(chartHover)="chartHovered($event)" 
+				(chartClick)="chartClicked($event)">
+			</canvas>
+		</div>
 	</div>
 </div>

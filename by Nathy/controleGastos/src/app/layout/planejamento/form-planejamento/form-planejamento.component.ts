@@ -33,6 +33,7 @@ export class FormPlanejamentoComponent implements OnInit {
 
 	adicionar(event){
 		this.item = event;
+		this.adicionarGasto = false;
 	}
 
 	adicionarOcultarGasto(){
