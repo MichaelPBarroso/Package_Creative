@@ -1,4 +1,5 @@
 import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { GastoComponent } from '../gasto.component';
 declare var $:any;
 
 @Component({
@@ -11,6 +12,8 @@ export class FormGastoComponent implements OnInit {
 	@Input() adicionarLista : boolean = false;
 	@Output() lista = new EventEmitter();
 	
+	gasto : GastoComponent = new GastoComponent();
+
   	constructor() { }
 
   	ngOnInit() {
@@ -18,8 +21,8 @@ export class FormGastoComponent implements OnInit {
 
   	ngAfterViewInit(){
 	    $(document).ready(function(){
-					$('select').select();
-					$('.datepicker').datepicker();
+			$('select').select();
+			$('.datepicker').datepicker();
     	});
   	}
 
@@ -29,11 +32,18 @@ export class FormGastoComponent implements OnInit {
 		{id: 2, name: "Cartão 2"},
 		{id: 3, name: "Vale Refeição"},
 		{id: 4, name: "Cartão debito"}
-	  ]
-	  
-
+	]
+	
 	salvar(){
-		console.log("salvo!")
-		this.lista.emit("Deu certo!!");
+		console.log("salvo!");
+		//Esta trazendo a lista dos item.
+		delete this.gasto.gastoCadastrada;
+
+		if(this.adicionarLista){
+			this.lista.emit(this.gasto);
+			return;
+		}
+
+		//Adiciona ao banco de dados
 	}
 }

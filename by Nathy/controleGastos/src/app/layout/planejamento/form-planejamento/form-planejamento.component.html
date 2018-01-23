@@ -8,6 +8,10 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
+							<input id="nomePlanejamento" class="validate" type="text">
+							<label for="nomePlanejamento">Nome planejamento</label>
+						</div>
+						<div class="input-field col s12">
 							<select class="validate" name="tipoPlanejamento">
 								<option value="" disabled selected>Selecione uma opção</option>
 								<option *ngFor="let tipo of tipoPlanejamento" value="{{tipo.id}}">{{tipo.name}}</option>
@@ -35,10 +39,16 @@
 		<div class="col s12 l6">
 			<div class="card-panel">
 				<div class="row">
-					<button class="btn right green darken-2 waves-effect waves-light" (click)="adicionarOcultarConta()">Adicionar contas</button>
+					<a class="dropdown-trigger btn right green darken-2 waves-effect waves-light" data-target="adicionarContas">Adicionar conta</a>
+					<ul id="adicionarContas" class="dropdown-content">
+						<li><a>Conta existente</a></li>
+						<li><a (click)="adicionarOcultarConta()">Nova conta</a></li>
+					</ul>
+					<!--<button class="btn left green darken-2 waves-effect waves-light">Adicionar conta existente</button>
+					<button class="btn right green darken-2 waves-effect waves-light" (click)="adicionarOcultarConta()">Adicionar nova conta</button> -->
 				</div>
 				<div class="card-content">
-					<form-conta *ngIf="adicionarConta"></form-conta>
+					<form-conta *ngIf="adicionarConta" adicionarLista="true" (lista)="adicionarItemConta($event)"></form-conta>
 					<table *ngIf="!adicionarConta">
 						<thead>
 							<tr>
@@ -46,14 +56,8 @@
 							</tr>
 						</thead>
 						<tbody>
-							<tr>
-								<td>Conta 1</td>
-							</tr>
-							<tr>
-								<td>Conta 2</td>
-							</tr>
-							<tr>
-								<td>Conta 3</td>
+							<tr *ngFor="let conta of contaPlanejamento">
+								<td>{{conta.nome}}</td>
 							</tr>
 						</tbody>
 					</table>
@@ -64,33 +68,23 @@
 		<div class="col s12 l6">
 			<div class="card-panel">
 				<div class="row">
-					<button class="btn right green darken-2 waves-effect waves-light" (click)="adicionarOcultarGasto()">Adicionar gasto</button>
+					<div class="col s12 l2 right">
+						<button class="btn right green darken-2 waves-effect waves-light" *ngIf="!adicionarGasto" (click)="adicionarOcultarGasto()">Adicionar gasto</button>
+						<button class="btn right green darken-2 waves-effect waves-light" *ngIf="adicionarGasto" (click)="adicionarOcultarGasto()">Cancelar</button>
+					</div>
 				</div>
-				<form-gasto *ngIf="adicionarGasto" (lista)="adicionar($event)"></form-gasto>
+				<form-gasto *ngIf="adicionarGasto" adicionarLista="true" (lista)="adicionarItemGasto($event)"></form-gasto>
 				<table *ngIf="!adicionarGasto">
 					<thead>
 						<tr>
 							<th>Gastos</th>
+							<th>Valor</th>
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
-							<td>Gasto 1</td>
-						</tr>
-						<tr>
-							<td>Gasto 2</td>
-						</tr>
-						<tr>
-							<td>Gasto 3</td>
-						</tr>
-						<tr>
-							<td>Gasto 4</td>
-						</tr>
-						<tr>
-							<td>Gasto 5</td>
-						</tr>
-						<tr>
-							<td>Gasto 6</td>
+						<tr *ngFor="let gasto of gastoPlanejamento">
+							<td>{{gasto.nome}}</td>
+							<td>{{gasto.valor}}</td>
 						</tr>
 					</tbody>
 				</table>
@@ -101,12 +95,13 @@
 <div class="row">
 	<div class="col s12">
 		<div class="card-panel">
-			<canvas baseChart height="150"
+			<canvas baseChart
 				[datasets]="chartData" 
 				[labels]="chartLabels" 
 				[options]="chartOptions" 
 				[legend]="chartLegend" 
 				[chartType]="chartType" 
+				[colors]="chartColors"
 				(chartHover)="chartHovered($event)" 
 				(chartClick)="chartClicked($event)">
 			</canvas>

@@ -8,6 +8,8 @@ declare var $:any;
 })
 export class DetailContaComponent implements OnInit {
 
+	apresentarDetalhes : boolean = false;
+
   	constructor() { }
 
   	ngOnInit() {
@@ -19,6 +21,11 @@ export class DetailContaComponent implements OnInit {
     	});
 	}
 	
+	buscarDetalhes(){
+		this.apresentarDetalhes = true;
+	}
+
+
 	headerTable: string[] = ["Data", "Item", "Valor"];
 	
 	bodyMensal: string[][] = [

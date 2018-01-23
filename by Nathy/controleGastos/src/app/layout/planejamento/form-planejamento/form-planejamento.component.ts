@@ -1,4 +1,6 @@
 import { Component, OnInit, AfterViewInit} from '@angular/core';
+import { GastoComponent } from '../../gasto/index';
+import { ContaComponent } from '../../conta/index';
 declare var $:any;
 
 @Component({
@@ -8,9 +10,11 @@ declare var $:any;
 })
 export class FormPlanejamentoComponent implements OnInit {
 
-	item : string;
 	adicionarGasto : boolean = false;
 	adicionarConta : boolean = false;
+
+	contaPlanejamento : ContaComponent[] = [];
+	gastoPlanejamento : GastoComponent[] = [];
 
 	tipoPlanejamento: any[] = 
 	[
@@ -28,12 +32,30 @@ export class FormPlanejamentoComponent implements OnInit {
 		$(document).ready(function(){
 			$('select').select();
 			$('.datepicker').datepicker();
+			$('.dropdown-trigger').dropdown();
 	  	});
 	}
 
-	adicionar(event){
-		this.item = event;
-		this.adicionarGasto = false;
+	adicionarItemConta(event){
+		let item : ContaComponent = event;
+		this.contaPlanejamento.push(item);
+
+		this.adicionarOcultarConta();
+	}
+
+	adicionarItemGasto(event){
+		let item : GastoComponent = event;
+		this.gastoPlanejamento.push(item);
+
+		//Atualização do grafiro
+		let clone = JSON.parse(JSON.stringify(this.chartData));
+		clone[0].data.push(item.valor);
+    	this.chartData = clone;
+
+		this.chartLabels.push(item.nome);
+
+		//this.adicionarGasto = false;
+		this.adicionarOcultarGasto();
 	}
 
 	adicionarOcultarGasto(){
@@ -45,6 +67,7 @@ export class FormPlanejamentoComponent implements OnInit {
 		this.adicionarGasto = true;
 		return;
 	}
+
 	adicionarOcultarConta(){
 		if(this.adicionarConta){
 			this.adicionarConta = false;
@@ -55,9 +78,11 @@ export class FormPlanejamentoComponent implements OnInit {
 		return;
 	}
 
+	/**
+	 * Configuração tabela - INICIO
+	 */
 
-	headerTable: string[] = ["Data", "Item", "Valor"];
-	
+	headerTable: string[] = ["Data", "Item", "Valor"];	
 	bodyMensal: string[][] = [
 		['01/01/2017', 'Almoço', 'R$ 30,00'],
 		['01/01/2017', 'Lanche', 'R$ 10,00'],
@@ -79,22 +104,31 @@ export class FormPlanejamentoComponent implements OnInit {
 		scaleShowVerticalLines: false,
 		responsive: true
 	};
-
+	/*
 	public chartData: any[] = [
 		{data: [800, 940, 750, 800, 715, 800, 1000], label: 'Valor limite'},
 		{data: [770, 800, 900, 660, 820, 780, 80], label: 'Valor gasto'}
 	];
+	*/
 
-	public chartLabels: string[] = [
-		'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro', 'Janeiro'
+	public chartData: any[] = [
+		{data: [], label: 'Valor gasto'}
 	];
-	onChartSelectionChange(chart){
-		if(chart){
-			if(chart == 'line'){
-				this.chartType = 'line';
-			}else if(chart == 'bar'){
-				this.chartType = 'horizontalBar';
-			}
+
+	public chartLabels: string[] = [];
+
+	public chartColors:Array<any> = [
+		{ // grey
+		  backgroundColor: 'rgba(0, 102, 0, 0.5)',
+		  borderColor: 'rgba(0, 102, 0, 1)',
+		  pointBackgroundColor: 'rgba(0, 102, 0, 1)',
+		  pointBorderColor: '#fff',
+		  pointHoverBackgroundColor: '#fff',
+		  pointHoverBorderColor: 'rgba(0, 102, 0, 0.8)'
 		}
-	}
+	  ];
+
+	/**
+	 * Configuração tabela - FIM
+	 */
 }

@@ -8,38 +8,38 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="nameConta" class="validate" type="text">
+							<input id="nameConta" class="validate" type="text" name="nome" [(ngModel)]="conta.nome">
 							<label for="nameConta">Nome</label>
 						</div>
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<select [(ngModel)]="tipoContaAtual" name="tipoContaAtual" class="validate">
+							<select [(ngModel)]="conta.tipoConta" name="tipoConta" class="validate">
 								<option value="" disabled selected>Selecione uma opção</option>
 								<option *ngFor="let tipo of tipoConta" value="{{tipo.id}}">{{tipo.name}}</option>
 							</select>
 							<label>Tipo de conta</label>
 						</div> 
 					</div>
-					<div class="row" *ngIf="tipoContaAtual == 1">
+					<div class="row" *ngIf="conta.tipoConta == 1">
 						<div class="input-field col s12">
-							<input id="limiteCartao" class="validate" type="number">
+							<input id="limiteCartao" class="validate" type="number" name="valorLimite" [(ngModel)]="conta.valorLimite">
 							<label for="limiteCartao">Limite cartão</label>
 						</div>
 					</div>
-					<div class="row" *ngIf="tipoContaAtual == 2">
+					<div class="row" *ngIf="conta.tipoConta == 2">
 							<div class="input-field col s12">
-								<input id="valorInicialConta" class="validate" type="number">
+								<input id="valorInicialConta" class="validate" type="number" name="valorInicial" [(ngModel)]="conta.valorInicial">
 								<label for="valorInicialConta">Valor inicial da conta</label>
 							</div>
 						</div>
-					<div class="row" *ngIf="tipoContaAtual == 3 || tipoContaAtual == 4">
+					<div class="row" *ngIf="conta.tipoConta == 3 || conta.tipoConta == 4">
 						<div class="input-field col s12">
-							<input id="valorMensal" class="validate" type="number">
+							<input id="valorMensal" class="validate" type="number" name="valorMensal" [(ngModel)]="conta.valorMensal">
 							<label for="valorMensal">Valor Mensal</label>
 						</div>
 					</div>
-					<button type="submit" class="btn right green darken-2 waves-effect waves-light">Salvar conta</button>
+					<button type="submit" (click)="salvar()" class="btn right green darken-2 waves-effect waves-light">Salvar conta</button>
 				</div>
 			</form>
 		</div>

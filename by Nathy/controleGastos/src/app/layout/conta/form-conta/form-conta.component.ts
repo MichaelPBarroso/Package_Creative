@@ -1,4 +1,5 @@
-import { Component, OnInit, AfterViewInit } from '@angular/core';
+import { Component, OnInit, AfterViewInit, Input, Output, EventEmitter } from '@angular/core';
+import { ContaComponent } from '../conta.component';
 declare var $:any;
 
 @Component({
@@ -7,6 +8,11 @@ declare var $:any;
   	styleUrls: ['./form-conta.component.scss']
 })
 export class FormContaComponent implements OnInit {
+
+	@Input() adicionarLista : boolean = false;
+	@Output() lista = new EventEmitter();
+	
+	conta : ContaComponent = new ContaComponent();
 
 	//Este item deve vir de uma api sobre os tipos de conta
 	tipoConta: any[] = 
@@ -28,5 +34,17 @@ export class FormContaComponent implements OnInit {
 	    $(document).ready(function(){
       		$('select').select();
     	});
-  	}
+	}
+	  
+	salvar(){
+		console.log("salvo!");
+		console.log(this.conta);
+
+		if(this.adicionarLista){
+			this.lista.emit(this.conta);
+			return;
+		}
+
+		//Adiciona ao banco de dados
+	}
 }

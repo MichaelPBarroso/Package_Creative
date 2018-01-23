@@ -8,11 +8,11 @@
 					</div>
 					<div class="row">
 						<div class="input-field col s12">
-							<input id="nameGasto" class="validate" type="text">
+							<input id="nameGasto" class="validate" type="text" [(ngModel)]="gasto.nome" name="nome">
 							<label for="nameGasto">Nome</label>
 						</div>
 						<div class="input-field col s12">
-							<input id="valorGasto" class="validate" type="number">
+							<input id="valorGasto" class="validate" type="number" [(ngModel)]="gasto.valor" name="valor">
 							<label for="valorGasto">Valor</label>
 						</div>
 						<div class="input-field col s12">
@@ -20,29 +20,29 @@
 							<label for="dataGasto">Data do gasto</label>
 						</div>
 						<div class="input-field col s12">
-							<select name="tipoContaAtual" class="validate">
+							<select name="tipoContaAtual" class="validate" [(ngModel)]="gasto.idConta" name="idConta">
 								<option value="" disabled selected>Selecione uma opção</option>
 								<option *ngFor="let conta of contaCadastrada" value="{{conta.id}}">{{conta.name}}</option>
 							</select>
 							<label>Conta</label>
 						</div>
 						<div class="input-field col s12">
-							<select name="tipoCategoria" class="validate">
+							<select name="tipoCategoria" class="validate" [(ngModel)]="gasto.idCategoria" name="idCategoria">
 								<option value="" disabled selected>Selecione uma opção</option>
-								<option value="">Roupas</option>
-								<option value="">Comida</option>
-								<option value="">Transporte</option>
-								<option value="">Entretenimento</option>
+								<option value="1">Roupas</option>
+								<option value="2">Comida</option>
+								<option value="3">Transporte</option>
+								<option value="4">Entretenimento</option>
 							</select>
 							<label>Categoria</label>
 						</div>
 						<div class="input-field col s12">
-							<textarea class="materialize-textarea" name="descricao" id="descricao"></textarea>
+							<textarea class="materialize-textarea" id="descricao" [(ngModel)]="gasto.descricao" name="descricao"></textarea>
 							<label for="descricao">Descrição</label>
 						</div>
 						<p class="col s12">
 							<label>
-								<input type="checkbox" class="validate" id="gastoPago" checked>
+								<input type="checkbox" class="validate" id="gastoPago" checked  [(ngModel)]="gasto.pagamentoRealizado" name="pagamentoRealizado">
 								<span>Pagamento realizado</span>
 							</label>
 						</p>

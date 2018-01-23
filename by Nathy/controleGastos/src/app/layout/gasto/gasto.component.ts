@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-gasto',
@@ -6,6 +6,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./gasto.component.scss']
 })
 export class GastoComponent implements OnInit {
+
+	nome : string;
+	valor : number;
+	data : Date;
+	idConta : number;
+	idCategoria : number;
+	descricao : string;
+	pagamentoRealizado : boolean = true;
 
 	gastoCadastrada : any[] = 
   	[
@@ -21,11 +29,13 @@ export class GastoComponent implements OnInit {
   		{id: 1, name: "Curso", value: 150.00, date: "10/12/2016"},
 		{id: 1, name: "Kit de Faca", value: 200.00, date: "26/11/2016"},
 		{id: 1, name: "Curso", value: 300.00, date: "12/11/2016"}
-  	]
+	]
 
-  constructor() { }
+	constructor() {
+		
+	}
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+	}
 
 }
