@@ -40,6 +40,16 @@
 							<textarea class="materialize-textarea" id="descricao" [(ngModel)]="gasto.descricao" name="descricao"></textarea>
 							<label for="descricao">Descrição</label>
 						</div>
+						<p class="col s6">
+							<label>
+								<input type="checkbox" class="validate" id="parcelado" checked  [(ngModel)]="gasto.parcelado" name="parcelado">
+								<span>Compra parcelada</span>
+							</label>
+						</p>
+						<div class="input-field col s6" *ngIf="gasto.parcelado">
+							<input type="number" class="validate" name="numeroParcelas" id="numeroParcelas" [(ngModel)]="gasto.numeroParcelas"/>
+							<label>Número parcelas</label>
+						</div>
 						<p class="col s12">
 							<label>
 								<input type="checkbox" class="validate" id="gastoPago" checked  [(ngModel)]="gasto.pagamentoRealizado" name="pagamentoRealizado">

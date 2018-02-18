@@ -9,7 +9,39 @@
 					<div class="row">
 						<div class="input-field col s12">
 							<input id="nameCategoria" class="validate" type="text">
-							<label for="nameCategoria">Nome categoria</label>
+							<label for="nameCategoria">Nome da categoria</label>
+						</div>
+					</div>
+					<!--
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="iconeCategoria" class="validate" type="text">
+							<label for="iconeCategoria">Icone da categoria</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<input id="corCategoria" class="validate" type="text">
+							<label for="corCategoria">Cor da categoria</label>
+						</div>
+					</div>
+					-->
+					<div class="row">
+						<div class="input-field col s12">
+							<select name="iconeCategoria" class="validate" name="iconeCategoria">
+								<option value="" disabled selected>Selecione uma opção</option>
+								<option *ngFor="let icone of iconesCategoria" value="{{icone.id}}" data-icon="add" class="left">{{icone.name}} </option>
+							</select>
+							<label>Icone da categoria</label>
+						</div>
+					</div>
+					<div class="row">
+						<div class="input-field col s12">
+							<select name="corCategoria" class="validate" name="corCategoria">
+								<option value="" disabled selected>Selecione uma opção</option>
+								<option *ngFor="let cor of coresCategoria" value="{{cor.id}}">{{cor.name}}</option>
+							</select>
+							<label>Cor da categoria</label>
 						</div>
 					</div>
 					<button type="submit" class="btn right green darken-2 waves-effect waves-light">Salvar categoria</button>

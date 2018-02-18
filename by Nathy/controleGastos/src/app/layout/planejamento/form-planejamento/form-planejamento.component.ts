@@ -118,7 +118,7 @@ export class FormPlanejamentoComponent implements OnInit {
 	public chartLabels: string[] = [];
 
 	public chartColors:Array<any> = [
-		{ // grey
+		{ // verde
 		  backgroundColor: 'rgba(0, 102, 0, 0.5)',
 		  borderColor: 'rgba(0, 102, 0, 1)',
 		  pointBackgroundColor: 'rgba(0, 102, 0, 1)',

@@ -14,6 +14,8 @@ export class GastoComponent implements OnInit {
 	idCategoria : number;
 	descricao : string;
 	pagamentoRealizado : boolean = true;
+	parcelado : boolean = false;
+	numeroParcelas : number;
 
 	gastoCadastrada : any[] = 
   	[
